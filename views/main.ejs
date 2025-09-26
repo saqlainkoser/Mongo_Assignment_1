@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>STUDENT MANAGEMENT SYSTEM</h1>
+    <form method="POST" action="/addStudent">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="section" placeholder="Section">
+        <input type="text" name="marks" placeholder="Marks">
+        <button>Add Student</button>
+    </form>
+    <h1>DATA</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Section</th>
+            <th>Marks</th>
+        </tr>
+        <!-- loop -->
+         
+            <% data.forEach((e)=>{ %>
+                    <tr>
+                        <td><%=e.name%></td>
+                        <td><%=e.section%></td>
+                        <td><%=e.marks%></td>
+                        <td>
+                            <a href="/delete-stu/<%=e._id%>">DELETE</a>
+                        </td>
+                    </tr>
+                <%})%>
+         
+    </table>
+</body>
+</html>

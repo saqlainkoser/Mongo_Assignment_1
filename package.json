@@ -12,6 +12,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "bson": "^6.10.4",
+    "ejs": "^3.1.10",
     "express": "^5.1.0",
     "mongodb": "^6.20.0",
     "nodemon": "^3.1.10"
