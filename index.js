@@ -51,9 +51,6 @@ app.get("/delete-stu/:id",async (req,res)=>{
 })
 
 
-
-
-
 app.listen(4040,()=>{
     console.log("http://localhost:4040");
     
