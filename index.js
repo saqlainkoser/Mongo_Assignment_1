@@ -30,9 +30,16 @@ const connectDB =async () =>{
 connectDB();
 
 app.get("/",async(req,res)=>{
-     const data = await db.collection("class").find().toArray()
+    const page = req.query.page > 0 ? req.query.page : 1
+    const skip = (page - 1) * 2
+
+    //skip
+    //limit
+     const data = await db.collection("class")
+                        .find().skip(skip).limit(2)
+                        .toArray()
         console.log(data);
-    res.render("main.ejs",{data})
+    res.render("main.ejs",{data , currentPage : page})
 })
 
 app.post("/addStudent",async (req,res)=>{
